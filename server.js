@@ -33,6 +33,10 @@ app.use(express.static('public'));
 // ===== Routes =====
 app.use("/fruits", fruitsController)
 
+app.get("*", (req, res)=>{
+  res.redirect("/fruits")
+})
+
 
 app.listen(PORT, () => { 
   console.log(`Listening on port: ${PORT}`)
